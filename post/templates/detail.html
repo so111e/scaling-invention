@@ -1,0 +1,17 @@
+<DOCTYPE html>
+<head>
+    <title>상세 페이지</title>
+</head>
+<body>
+    <h3>제목: {{ post.title }}</h3>
+    <p>내용: {{ post.text }}</p>
+    {% if images %}
+    <ul>
+        {% for image in images %}
+            <li><img src="{{ image.image.url }}" alt="Image"></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <a href="{% url 'main' %}"><input type="button" value="목록으로"></a>
+</body>
+</html>
